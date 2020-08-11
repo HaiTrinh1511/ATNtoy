@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+    <style>
+        body {
+            background-image: url("/images/1.jpeg");
+            background-repeat: repeat;
+        }
+    </style>
+    <link rel="stylesheet" href="styles/styles.css">
+    <title>Insert more products</title>
+</head>
+
+<body>
+    <div class="container">
+        <h1 align="left">Add more toys</h1>
+        <p>Provide more information for new products.</p>
+        <p>Information includes ID, Name, Price, Description (if necessary)</p>
+        <table style="margin-left: 200px; margin-top: 150px;">
+        <form action="/doInsert" method="post">
+        <table class="table">
+        <thead>
+            <tr>
+                <th scope="col">ID</th>
+                <th scope="col">Name</th>
+                {{!-- <th scope="col">Image</th> --}}
+                <th scope="col">Price</th>
+                <th scope="col">Description</th>
+                <th scope="col">Add Product</th>
+
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td><input type="text" name="id" required></td>
+                <td><input type="text" name="txtName" required></td>
+                {{!-- <td><input type="file" name="img" required></td> --}}
+                <td><input type="text" name="txtPrice"></td>
+                <td><textarea name="description" placeholder="Write some descriptions for products here..." style="height:150px"></textarea> </td>
+                <td align="center"><input type="submit" value="Add Product" class="btn btn-primary"></td>
+            </tr>
+        </tbody>
+    </table>
+    </form>
+    </div>
+</body>
+
+</html>

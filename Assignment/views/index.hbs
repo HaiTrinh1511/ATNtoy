@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js"></script>
+    <link rel="stylesheet" href="styles/styles.css">
+    <style>
+        li a:hover:not(.active) {
+            background-color: #cfe6e6;
+        }
+
+        ul {
+            list-style-type: none;
+            margin: 0;
+            padding: 0;
+            overflow: hidden;
+            border: 1px solid #cf6e6e;
+            background-color: #86d0da;
+        }
+
+        li {
+            float: left;
+        }
+
+        li a {
+            display: block;
+            color: #456;
+            text-align: center;
+            padding: 20px 60px;
+            text-decoration: none;
+        }
+
+        li a.active {
+            color: white;
+            background-color: black;
+        }
+
+        body {
+            background-image: url("/images/1.jpeg");
+            background-repeat: repeat;
+        }
+    </style>
+    <title>ATN Company</title>
+</head>
+
+<body>
+    <h1 align="center"> ATN Company </h1>
+    <ul>
+        <li><a href="/">Homepage</a></li>
+        <li><a href="/insert">Add more product</a></li>
+        <li><a href="/contact">Contact</a></li>
+    </ul>
+
+    <div class="d-flex align-items-center">
+        <form class="ml-auto d-flex" action="/doSearch" method="get">
+            <input class="form-control" type="text" name="txtSearch" />
+            <br>
+            <button class="btn btn-primary ml-2">Search</button>
+        </form>
+    </div>
+
+    <table class="table">
+        <thead>
+            <tr>
+                <th scope="col">ID</th>
+                <th scope="col">Name</th>
+                {{!-- <th scope="col">Image</th> --}}
+                <th scope="col">Price</th>
+                <th scope="col">Description</th>
+                <th scope="col">Delete</th>
+
+            </tr>
+        </thead>
+        <tbody>
+            {{#each model}}
+            <tr>
+                <td>{{Id}} </td>
+                <td>{{name}}</td>
+                {{!-- <td><img width="150" height="100"{{Image}}></td> --}}
+                <td>{{price}}</td>
+                <td>{{Description}}</td>
+                <td><a href="/remove?id={{_id}}">Delete</a></td>
+            </tr>
+            {{/each}}
+        </tbody>
+    </table>
+
+</body>
+
+</html>
