@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+    <style>
+        body {
+            background-image: url("/images/1.jpeg");
+            background-repeat: repeat;
+        }
+
+        btn {
+            position: center;
+        }
+    </style>
+</head>
+<title>Register</title>
+<script>
+    function checkForm() {
+        let inputName = document.getElementById('txtName').value;
+        if (inputName.trim().length == 0) {
+            alert('Name cannot be empty');
+            document.getElementById('lblNameError').innerText = "Name cannot be empty"
+            return false;
+        }
+    }
+</script>
+</head>
+
+<body>
+    <h1 align="center">Register User</h1>
+    <form action="/doRegister" method="post" onsubmit="return checkForm()">
+        <div class="form-group">
+            <label for="txtName">Name</label>
+            <input type="text" name="txtName" id="txtName" class="form-control">
+            <label id="lblNameError" style="color:red"></label>
+        </div>
+        <div class="form-group">
+            <label for="txtEmail">Email</label>
+            <input type="email" name="txtEmail" id="txtEmail" class="form-control">
+        </div>
+        <center><input type="submit" value="Register" class="btn btn-default"></center>
+    </form>
+</body>
+
+</html>

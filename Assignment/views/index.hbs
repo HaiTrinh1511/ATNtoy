@@ -54,6 +54,8 @@
         <li><a href="/">Homepage</a></li>
         <li><a href="/insert">Add more product</a></li>
         <li><a href="/contact">Contact</a></li>
+        <li><a href="/register">Register</a></li>
+        <li><a href="/allUser">View all users</a></li>
     </ul>
 
     <div class="d-flex align-items-center">
@@ -69,7 +71,6 @@
             <tr>
                 <th scope="col">ID</th>
                 <th scope="col">Name</th>
-                {{!-- <th scope="col">Image</th> --}}
                 <th scope="col">Price</th>
                 <th scope="col">Description</th>
                 <th scope="col">Delete</th>
@@ -81,7 +82,6 @@
             <tr>
                 <td>{{Id}} </td>
                 <td>{{name}}</td>
-                {{!-- <td><img width="150" height="100"{{Image}}></td> --}}
                 <td>{{price}}</td>
                 <td>{{Description}}</td>
                 <td><a href="/remove?id={{_id}}">Delete</a></td>
