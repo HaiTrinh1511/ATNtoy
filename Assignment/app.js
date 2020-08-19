@@ -94,18 +94,6 @@ app.post('/doRegister', async function(req, res){
     res.redirect("/");
 })
 app.get('/allUser', async function(req,res){
-    // let result = [];
-    // fs.readFile(fileName, 'utf8', function(error,data){
-    //     let allUsers = data.split("\n");
-    //     for(i=0;i<allUsers.length;i++){
-    //         if(allUsers[i].trim().length != 0){
-    //             let nameX = allUsers[i].split('------')[0];
-    //             let emailX = allUsers[i].split('------')[1];
-    //             result.push({name:nameX,email:emailX})
-    //         }
-    //     }
-    //     // res.render('allUser',{model:result});
-    // })
     let client = await MongoClient.connect(url);
     let dbo = client.db("ProductDB");
     let result = await dbo.collection("User").find({}).toArray();
